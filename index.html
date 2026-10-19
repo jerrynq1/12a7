@@ -2,226 +2,80 @@
 <html lang="vi" class="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>KÝ ỨC 12A7 - THCS-THPT HÀ THÀNH | KỶ YẾU GEN Z</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        gzBg: '#FFFDF7',
-                        gzPink: '#FF6B9B',
-                        gzPinkDark: '#E04374',
-                        gzPinkLight: '#FFE8F0',
-                        gzBlueSky: '#3A86EF',
-                        gzBlueDark: '#1E5BB0',
-                        gzBlueLight: '#EAF2FF',
-                        gzYellow: '#FFD166',
-                        gzYellowLight: '#FFF8DB',
-                        gzPurple: '#9D4EDD',
-                        gzPurpleLight: '#F5E6FF',
-                        gzOrange: '#FF9F1C',
-                        gzDark: '#1E293B'
+                        gzBg: '#FFFDF7', gzPink: '#FF6B9B', gzPinkDark: '#E04374', gzPinkLight: '#FFE8F0',
+                        gzBlueSky: '#3A86EF', gzBlueDark: '#1E5BB0', gzBlueLight: '#EAF2FF',
+                        gzYellow: '#FFD166', gzYellowLight: '#FFF8DB', gzPurple: '#9D4EDD', gzPurpleLight: '#F5E6FF',
+                        gzOrange: '#FF9F1C', gzDark: '#1E293B'
                     },
-                    fontFamily: {
-                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
-                        handwrite: ['Itim', 'cursive'],
-                    },
+                    fontFamily: { sans: ['"Be Vietnam Pro"', 'sans-serif'], handwrite: ['Itim', 'cursive'] },
                     boxShadow: {
-                        'neo': '4px 4px 0px #1E293B',
-                        'neo-lg': '7px 7px 0px #1E293B',
-                        'neo-pink': '5px 5px 0px #FF6B9B',
-                        'neo-blue': '5px 5px 0px #3A86EF',
-                        'neo-yellow': '5px 5px 0px #FF9F1C',
-                        'neo-purple': '5px 5px 0px #9D4EDD',
+                        'neo': '4px 4px 0px #1E293B', 'neo-lg': '7px 7px 0px #1E293B',
+                        'neo-pink': '5px 5px 0px #FF6B9B', 'neo-blue': '5px 5px 0px #3A86EF',
+                        'neo-yellow': '5px 5px 0px #FF9F1C', 'neo-purple': '5px 5px 0px #9D4EDD',
                     }
                 }
             }
         }
     </script>
-
-    <!-- Google Fonts: Be Vietnam Pro & Itim (100% Vietnamese Support) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Itim&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- JS Confetti Effect -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
         body {
-            font-family: 'Be Vietnam Pro', sans-serif;
-            background-color: #FFFDF7;
-            color: #1E293B;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(#FF6B9B 0.8px, transparent 0.8px), 
-                radial-gradient(#3A86EF 0.8px, #FFFDF7 0.8px);
-            background-size: 32px 32px;
-            background-position: 0 0, 16px 16px;
+            font-family: 'Be Vietnam Pro', sans-serif; background-color: #FFFDF7; color: #1E293B; overflow-x: hidden;
+            background-image: radial-gradient(#FF6B9B 0.8px, transparent 0.8px), radial-gradient(#3A86EF 0.8px, #FFFDF7 0.8px);
+            background-size: 32px 32px; background-position: 0 0, 16px 16px;
         }
-
-        /* Neo-Brutalism Styling */
-        .neo-card {
-            background-color: #FFFFFF;
-            border: 3.5px solid #1E293B;
-            border-radius: 24px;
-            box-shadow: 5px 5px 0px #1E293B;
-            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .neo-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0px #1E293B;
-        }
-
-        /* Floating Animation */
-        .float-anim {
-            animation: float 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
-        }
-
-        /* Polaroid Styling & Dual Theme Accents */
-        .polaroid-frame {
-            background-color: #FFFFFF;
-            border: 3.5px solid #1E293B;
-            padding: 14px 14px 22px 14px;
-            box-shadow: 5px 5px 0px #1E293B;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-        .polaroid-frame:hover {
-            transform: scale(1.02) rotate(-1deg);
-            box-shadow: 9px 9px 0px #1E293B;
-            z-index: 10;
-        }
-
-        /* Gender Specific Frame Borders */
-        .polaroid-frame.theme-nam {
-            border-color: #1E293B;
-            background: linear-gradient(180deg, #FFFFFF 85%, #EAF2FF 100%);
-            box-shadow: 5px 5px 0px #3A86EF;
-        }
-        .polaroid-frame.theme-nam:hover {
-            box-shadow: 9px 9px 0px #1E293B;
-        }
-
-        .polaroid-frame.theme-nu {
-            border-color: #1E293B;
-            background: linear-gradient(180deg, #FFFFFF 85%, #FFE8F0 100%);
-            box-shadow: 5px 5px 0px #FF6B9B;
-        }
-        .polaroid-frame.theme-nu:hover {
-            box-shadow: 9px 9px 0px #1E293B;
-        }
-
-        .polaroid-frame.theme-tapthe {
-            border-color: #1E293B;
-            background: linear-gradient(180deg, #FFFFFF 85%, #FFF8DB 100%);
-            box-shadow: 5px 5px 0px #FF9F1C;
-        }
-
-        /* Interactive Sticker Overlay Container */
-        .sticker-canvas {
-            position: relative;
-            overflow: hidden;
-            touch-action: none;
-        }
-
-        .placed-sticker {
-            position: absolute;
-            user-select: none;
-            z-index: 30;
-            cursor: move;
-            transition: transform 0.1s ease;
-            filter: drop-shadow(2px 2px 0px #1E293B);
-            display: inline-flex;
-            align-items: center;
-            justify-center: center;
-        }
-        .placed-sticker.selected {
-            outline: 2px dashed #3A86EF;
-            outline-offset: 4px;
-            border-radius: 8px;
-        }
-
-        /* Presentation Slide Animations */
-        .slide-fx-zoom {
-            animation: slideZoom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-        @keyframes slideZoom {
-            from { opacity: 0; transform: scale(0.7) rotate(-3deg); }
-            to { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        .slide-fx-bounce {
-            animation: slideBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-        @keyframes slideBounce {
-            from { opacity: 0; transform: translateY(100px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .slide-fx-flip {
-            animation: slideFlip 0.6s ease-out forwards;
-        }
-        @keyframes slideFlip {
-            from { opacity: 0; transform: rotateY(90deg) scale(0.85); }
-            to { opacity: 1; transform: rotateY(0deg) scale(1); }
-        }
-
-        /* Vinyl Spin */
-        .spin-slow {
-            animation: spin 7s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Cursor Preview for Sticker Tool */
-        .sticker-cursor-active {
-            cursor: crosshair !important;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FFFDF7;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #FF6B9B;
-            border: 2px solid #1E293B;
-            border-radius: 10px;
-        }
+        .neo-card { background-color: #FFFFFF; border: 3.5px solid #1E293B; border-radius: 24px; box-shadow: 5px 5px 0px #1E293B; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .neo-card:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0px #1E293B; }
+        .float-anim { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+        .polaroid-frame { background-color: #FFFFFF; border: 3.5px solid #1E293B; padding: 14px 14px 22px 14px; box-shadow: 5px 5px 0px #1E293B; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .polaroid-frame:hover { transform: scale(1.02) rotate(-1deg); box-shadow: 9px 9px 0px #1E293B; z-index: 10; }
+        .polaroid-frame.theme-nam { border-color: #1E293B; background: linear-gradient(180deg, #FFFFFF 85%, #EAF2FF 100%); box-shadow: 5px 5px 0px #3A86EF; }
+        .polaroid-frame.theme-nam:hover { box-shadow: 9px 9px 0px #1E293B; }
+        .polaroid-frame.theme-nu { border-color: #1E293B; background: linear-gradient(180deg, #FFFFFF 85%, #FFE8F0 100%); box-shadow: 5px 5px 0px #FF6B9B; }
+        .polaroid-frame.theme-nu:hover { box-shadow: 9px 9px 0px #1E293B; }
+        .polaroid-frame.theme-tapthe { border-color: #1E293B; background: linear-gradient(180deg, #FFFFFF 85%, #FFF8DB 100%); box-shadow: 5px 5px 0px #FF9F1C; }
+        .sticker-canvas { position: relative; overflow: hidden; touch-action: none; }
+        .placed-sticker { position: absolute; user-select: none; z-index: 30; cursor: move; transition: transform 0.1s ease; filter: drop-shadow(2px 2px 0px #1E293B); display: inline-flex; align-items: center; justify-content: center; }
+        .placed-sticker.selected { outline: 2px dashed #3A86EF; outline-offset: 4px; border-radius: 8px; }
+        .slide-fx-zoom { animation: slideZoom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+        @keyframes slideZoom { from { opacity: 0; transform: scale(0.7) rotate(-3deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+        .slide-fx-bounce { animation: slideBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+        @keyframes slideBounce { from { opacity: 0; transform: translateY(100px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-fx-flip { animation: slideFlip 0.6s ease-out forwards; }
+        @keyframes slideFlip { from { opacity: 0; transform: rotateY(90deg) scale(0.85); } to { opacity: 1; transform: rotateY(0deg) scale(1); } }
+        .spin-slow { animation: spin 7s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .sticker-cursor-active { cursor: crosshair !important; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FFFDF7; }
+        ::-webkit-scrollbar-thumb { background: #FF6B9B; border: 2px solid #1E293B; border-radius: 10px; }
+        .border-3{border-width:3px}
+        :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
     </style>
 </head>
 <body class="relative min-h-screen text-gzDark selection:bg-gzYellow selection:text-gzDark">
 
-    <!-- Active Sticker Cursor Floating Preview Badge -->
-    <div id="sticker-cursor-preview" class="fixed pointer-events-none z-50 text-3xl hidden transform -translate-x-1/2 -translate-y-1/2 filter drop-shadow-md">
-        🌸
-    </div>
+    <div id="sticker-cursor-preview" class="fixed pointer-events-none z-50 text-3xl hidden transform -translate-x-1/2 -translate-y-1/2 filter drop-shadow-md">🌸</div>
 
-    <!-- Floating Sticker Sidebar Dock -->
     <aside id="sticker-dock" class="fixed left-4 top-1/4 z-40 hidden lg:flex flex-col gap-3 p-3 bg-white border-4 border-gzDark rounded-3xl shadow-neo-pink max-w-[150px]">
         <div class="flex items-center justify-between border-b-2 border-gzDark pb-2">
-            <span class="text-[11px] font-black uppercase text-gzDark tracking-wider"><i class="fa-solid fa-tags text-gzPink mr-1"></i> Sticker</span>
+            <span class="text-[11px] font-black uppercase text-gzDark tracking-wider"><span class="not-italic">🏷️</span> Sticker</span>
             <button onclick="clearActiveStickerSelection()" class="text-[10px] text-gray-500 hover:text-gzDark font-bold" title="Hủy chọn">X</button>
         </div>
-
-        <!-- Quick Categories -->
         <div class="flex flex-col gap-2 max-h-[55vh] overflow-y-auto pr-1">
             <span class="text-[9px] font-black text-gzPink uppercase tracking-widest mt-1">Nữ 💖</span>
             <div class="grid grid-cols-2 gap-1.5">
@@ -230,7 +84,6 @@
                 <button onclick="selectActiveSticker('🌸', 'nu')" class="stk-item p-2 rounded-xl bg-gzPinkLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">🌸</button>
                 <button onclick="selectActiveSticker('🎀', 'nu')" class="stk-item p-2 rounded-xl bg-gzPinkLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">🎀</button>
             </div>
-
             <span class="text-[9px] font-black text-gzBlueSky uppercase tracking-widest mt-2">Nam ⚡</span>
             <div class="grid grid-cols-2 gap-1.5">
                 <button onclick="selectActiveSticker('⚡', 'nam')" class="stk-item p-2 rounded-xl bg-gzBlueLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">⚡</button>
@@ -238,7 +91,6 @@
                 <button onclick="selectActiveSticker('🔥', 'nam')" class="stk-item p-2 rounded-xl bg-gzBlueLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">🔥</button>
                 <button onclick="selectActiveSticker('🎮', 'nam')" class="stk-item p-2 rounded-xl bg-gzBlueLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">🎮</button>
             </div>
-
             <span class="text-[9px] font-black text-gzOrange uppercase tracking-widest mt-2">Chung 🎓</span>
             <div class="grid grid-cols-2 gap-1.5">
                 <button onclick="selectActiveSticker('🎓', 'tapthe')" class="stk-item p-2 rounded-xl bg-gzYellowLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">🎓</button>
@@ -247,42 +99,31 @@
                 <button onclick="selectActiveSticker('✨', 'tapthe')" class="stk-item p-2 rounded-xl bg-gzYellowLight border-2 border-gzDark text-lg hover:scale-110 transition flex items-center justify-center">✨</button>
             </div>
         </div>
-
-        <div id="dock-status" class="text-[10px] text-center font-bold text-gray-600 bg-gzBg p-1.5 rounded-xl border border-gzDark">
-            Click sticker & dán lên ảnh!
-        </div>
+        <div id="dock-status" class="text-[10px] text-center font-bold text-gray-600 bg-gzBg p-1.5 rounded-xl border border-gzDark">Click sticker & dán lên ảnh!</div>
     </aside>
 
-    <!-- Music Player Floating Widget -->
     <div class="fixed bottom-6 right-6 z-40 bg-white border-4 border-gzDark p-3 rounded-3xl shadow-neo-blue flex items-center gap-3">
         <div class="relative cursor-pointer" onclick="toggleMusic()">
             <div id="vinyl-disk" class="w-12 h-12 rounded-full bg-gradient-to-tr from-gzPink via-gzYellow to-gzBlueSky p-1 border-2 border-gzDark flex items-center justify-center">
-                <div class="w-full h-full bg-gzDark rounded-full flex items-center justify-center relative">
-                    <i class="fa-solid fa-music text-gzYellow text-sm"></i>
-                </div>
+                <div class="w-full h-full bg-gzDark rounded-full flex items-center justify-center relative"><span class="not-italic">🎵</span></div>
             </div>
             <div id="play-badge" class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-gzPink border-2 border-gzDark flex items-center justify-center text-xs text-white">
-                <i class="fa-solid fa-play" id="play-icon"></i>
+                <span class="not-italic" id="play-icon">▶</span>
             </div>
         </div>
         <div class="hidden sm:block pr-2">
-            <div class="text-xs font-black text-gzDark truncate w-40">Thanh Xuân 12A7 HTS</div>
-            <div class="text-xs text-gzPink font-handwrite text-base">Nhạc kỷ yếu chill lofi</div>
+            <div class="text-xs font-black text-gzDark truncate w-40">Nhạc nền 12A7</div>
+            <div class="text-xs text-gzPink font-handwrite text-base">Bấm đĩa để chọn nhạc từ máy</div>
         </div>
-        <audio id="bg-audio" loop>
-            <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
-        </audio>
+        <input type="file" id="music-file" accept="audio/*" class="hidden">
+        <audio id="bg-audio" loop></audio>
     </div>
 
-    <!-- App Main Container -->
     <div class="relative z-10 flex flex-col min-h-screen">
 
-        <!-- Header & Branding -->
         <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b-4 border-gzDark px-4 md:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gzYellow border-3 border-gzDark shadow-neo flex items-center justify-center font-black text-xl text-gzDark rotate-[-4deg]">
-                    12A7
-                </div>
+                <div class="w-12 h-12 rounded-2xl bg-gzYellow border-3 border-gzDark shadow-neo flex items-center justify-center font-black text-xl text-gzDark rotate-[-4deg]">12A7</div>
                 <div>
                     <h1 class="font-black text-lg md:text-xl tracking-tight text-gzDark flex items-center gap-2">
                         12A7 • THCS-THPT HÀ THÀNH
@@ -291,184 +132,121 @@
                     <p class="text-xs text-gray-600 font-handwrite text-base -mt-0.5">Kỷ Yếu Gen Z • 2 Realm Nam & Nữ Rạng Rỡ</p>
                 </div>
             </div>
-
             <div class="flex items-center gap-2 md:gap-3">
+                <button id="lock-btn" onclick="toggleLock()" class="px-3 py-2 rounded-2xl bg-white text-gzDark font-black text-xs md:text-sm border-3 border-gzDark shadow-neo hover:bg-gzYellowLight transition flex items-center gap-1.5">
+                    <span class="not-italic" id="lock-icon">🔒</span><span id="lock-text" class="hidden sm:inline">Nhập mật khẩu lớp</span>
+                </button>
                 <button onclick="startPresentationMode()" class="px-3.5 py-2 rounded-2xl bg-gzPink text-white font-black text-xs md:text-sm border-3 border-gzDark shadow-neo hover:translate-y-[-2px] hover:shadow-neo-lg transition flex items-center gap-2">
-                    <i class="fa-solid fa-circle-play text-gzYellow"></i>
-                    <span class="hidden sm:inline">Trình Chiếu Slide Canva</span>
+                    <span class="not-italic">▶️</span>
+                    <span class="hidden sm:inline">Trình Chiếu Slide</span>
                     <span class="sm:hidden">Chiếu Slide</span>
                 </button>
-                <button onclick="openUploadModal()" class="hidden md:flex px-3.5 py-2 rounded-2xl bg-gzBlueLight text-gzDark font-extrabold text-xs md:text-sm border-3 border-gzDark shadow-neo hover:bg-gzBlueSky hover:text-white transition items-center gap-2">
-                    <i class="fa-solid fa-plus text-gzPink"></i>
-                    <span>Tải Ảnh Mới</span>
+                <button onclick="openUploadModal()" class="flex px-3.5 py-2 rounded-2xl bg-gzBlueLight text-gzDark font-extrabold text-xs md:text-sm border-3 border-gzDark shadow-neo hover:bg-gzBlueSky hover:text-white transition items-center gap-2">
+                    <span class="not-italic">➕</span><span>Đăng Ảnh / Video</span>
                 </button>
             </div>
         </header>
 
-        <!-- Hero Section -->
         <section class="relative px-4 md:px-8 py-8 md:py-14 max-w-6xl mx-auto text-center flex flex-col items-center">
-            
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gzYellow border-3 border-gzDark font-extrabold text-xs text-gzDark mb-4 shadow-neo float-anim">
-                <i class="fa-solid fa-school text-gzOrange"></i> 
-                <span>Trường THCS-THPT Hà Thành • Niên Khóa 2024 - 2027</span>
+                <span class="not-italic">🏫</span><span>Trường THCS-THPT Hà Thành • Niên Khóa 2024 - 2027</span>
             </div>
-
             <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-3 leading-tight">
                 KỶ YẾU ĐỈNH CAO <br/>
                 <span class="text-gzPink underline decoration-gzYellow decoration-wavy">LỚP 12A7 HÀ THÀNH</span>
             </h2>
-
             <p class="font-handwrite text-2xl md:text-3xl text-gray-700 max-w-3xl mb-8 leading-relaxed">
                 "Thanh xuân của 12A7 là tập hợp những nụ cười, sắc hồng dịu dàng của phe Nữ và nét xanh năng lượng của phe Nam!"
             </p>
-
-            <!-- 3 Main Realm Cards (Girl Pink - Center Class - Boy Blue) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-2">
-                
-                <!-- Girl Realm (Pink) -->
                 <div onclick="filterCategory('Nữ')" class="bg-gzPinkLight p-6 rounded-3xl border-4 border-gzDark shadow-neo-pink cursor-pointer hover:scale-105 transition duration-300 relative overflow-hidden text-left group">
-                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzPink">
-                        <i class="fa-solid fa-heart text-9xl"></i>
-                    </div>
-                    <div class="w-12 h-12 rounded-2xl bg-gzPink text-white border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">
-                        🌸
-                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzPink"><span class="not-italic">❤️</span></div>
+                    <div class="w-12 h-12 rounded-2xl bg-gzPink text-white border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">🌸</div>
                     <span class="text-[10px] font-black text-gzPink uppercase tracking-widest bg-white px-2.5 py-1 rounded-full border-2 border-gzDark">PHE NỮ • PINK REALM</span>
                     <h3 class="text-2xl font-black text-gzDark mt-2 mb-1">Nữ Vương 12A7</h3>
                     <p class="text-xs text-gray-700 font-medium leading-relaxed">Góc xinh tươi, duyên dáng & ngọt ngào nhất của các bạn nữ A7.</p>
                 </div>
-
-                <!-- Center Class & Yearbook (Yellow) -->
                 <div onclick="filterCategory('Kỷ Yếu')" class="bg-gzYellowLight p-6 rounded-3xl border-4 border-gzDark shadow-neo-yellow cursor-pointer hover:scale-105 transition duration-300 relative overflow-hidden text-left group">
-                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzOrange">
-                        <i class="fa-solid fa-graduation-cap text-9xl"></i>
-                    </div>
-                    <div class="w-12 h-12 rounded-2xl bg-gzYellow text-gzDark border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">
-                        🎓
-                    </div>
-                    <span class="text-[10px] font-black text-gzDark uppercase tracking-widest bg-white px-2.5 py-1 rounded-full border-2 border-gzDark">TAP THÊ • CLASS 12A7</span>
+                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzOrange"><span class="not-italic">🎓</span></div>
+                    <div class="w-12 h-12 rounded-2xl bg-gzYellow text-gzDark border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">🎓</div>
+                    <span class="text-[10px] font-black text-gzDark uppercase tracking-widest bg-white px-2.5 py-1 rounded-full border-2 border-gzDark">TẬP THỂ • CLASS 12A7</span>
                     <h3 class="text-2xl font-black text-gzDark mt-2 mb-1">Tập Thể Kỷ Yếu</h3>
                     <p class="text-xs text-gray-700 font-medium leading-relaxed">Bộ ảnh tập thể lớp 12A7 đầy đủ thành viên, năng động & nhí nhảnh.</p>
                 </div>
-
-                <!-- Boy Realm (Blue) -->
                 <div onclick="filterCategory('Nam')" class="bg-gzBlueLight p-6 rounded-3xl border-4 border-gzDark shadow-neo-blue cursor-pointer hover:scale-105 transition duration-300 relative overflow-hidden text-left group">
-                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzBlueSky">
-                        <i class="fa-solid fa-bolt text-9xl"></i>
-                    </div>
-                    <div class="w-12 h-12 rounded-2xl bg-gzBlueSky text-white border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">
-                        ⚡
-                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-15 group-hover:opacity-30 transition text-gzBlueSky"><span class="not-italic">⚡</span></div>
+                    <div class="w-12 h-12 rounded-2xl bg-gzBlueSky text-white border-3 border-gzDark flex items-center justify-center text-xl mb-3 shadow-neo">⚡</div>
                     <span class="text-[10px] font-black text-gzBlueSky uppercase tracking-widest bg-white px-2.5 py-1 rounded-full border-2 border-gzDark">PHE NAM • BOY REALM</span>
-                    <h3 class="text-2xl font-black text-gzDark mt-2 mb-1">Đại Ca 12A7</h3>
+                    <h3 class="text-2xl font-black text-gzDark mt-2 mb-1">Nam Thần 12A7</h3>
                     <p class="text-xs text-gray-700 font-medium leading-relaxed">Góc cực ngầu, quậy hết mình và siêu ga-lăng (chắc vậy) của cánh nam sinh.</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- Interactive Sticker Bar & Controls -->
         <section class="px-4 md:px-8 max-w-6xl mx-auto w-full mb-6">
             <div class="bg-white p-5 rounded-3xl border-4 border-gzDark shadow-neo flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gzPink text-white border-2 border-gzDark flex items-center justify-center text-xl">
-                        ✨
-                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-gzPink text-white border-2 border-gzDark flex items-center justify-center text-xl">✨</div>
                     <div>
                         <h4 class="font-black text-sm text-gzDark">BỘ CÔNG CỤ DÁN STICKER SÁNG TẠO</h4>
-                        <p class="text-xs text-gray-600 font-handwrite text-base">Chọn Sticker bên dưới -> Click vào ảnh bất kỳ để dán nhãn!</p>
+                        <p class="text-xs text-gray-600 font-handwrite text-base">Chọn sticker bên dưới → bấm vào ảnh bất kỳ để dán nhãn! (cần mật khẩu lớp)</p>
                     </div>
                 </div>
-
-                <!-- Sticker Palette Selector -->
                 <div class="flex flex-wrap items-center gap-2">
                     <button onclick="selectActiveSticker('💖', 'nu')" class="stk-btn p-2 rounded-2xl bg-gzPinkLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nữ 💖">💖</button>
                     <button onclick="selectActiveSticker('🌸', 'nu')" class="stk-btn p-2 rounded-2xl bg-gzPinkLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nữ 🌸">🌸</button>
                     <button onclick="selectActiveSticker('👑', 'nu')" class="stk-btn p-2 rounded-2xl bg-gzPinkLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nữ 👑">👑</button>
-                    
                     <button onclick="selectActiveSticker('⚡', 'nam')" class="stk-btn p-2 rounded-2xl bg-gzBlueLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nam ⚡">⚡</button>
                     <button onclick="selectActiveSticker('😎', 'nam')" class="stk-btn p-2 rounded-2xl bg-gzBlueLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nam 😎">😎</button>
                     <button onclick="selectActiveSticker('🔥', 'nam')" class="stk-btn p-2 rounded-2xl bg-gzBlueLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Nam 🔥">🔥</button>
-                    
                     <button onclick="selectActiveSticker('🎓', 'tapthe')" class="stk-btn p-2 rounded-2xl bg-gzYellowLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Chung 🎓">🎓</button>
                     <button onclick="selectActiveSticker('🧋', 'tapthe')" class="stk-btn p-2 rounded-2xl bg-gzYellowLight border-2 border-gzDark text-xl hover:scale-110 transition" title="Chung 🧋">🧋</button>
-                    
-                    <div id="active-stk-badge" class="px-3 py-1.5 rounded-full bg-gzYellow font-black text-xs border-2 border-gzDark flex items-center gap-1">
-                        <span>Chưa chọn</span>
-                    </div>
+                    <div id="active-stk-badge" class="px-3 py-1.5 rounded-full bg-gzYellow font-black text-xs border-2 border-gzDark flex items-center gap-1"><span>Chưa chọn</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Graduation Countdown Section -->
         <section class="px-4 md:px-8 py-2 max-w-6xl mx-auto w-full">
             <div class="bg-gzPurpleLight p-5 md:p-6 rounded-3xl border-4 border-gzDark shadow-neo flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <div class="inline-flex items-center gap-2 text-gzPurple font-black text-xs uppercase tracking-wider mb-1">
-                        <i class="fa-regular fa-clock"></i> Đếm ngược thi THPT Quốc Gia
-                    </div>
+                    <div class="inline-flex items-center gap-2 text-gzPurple font-black text-xs uppercase tracking-wider mb-1"><span class="not-italic">🕒</span> Đếm ngược kỳ thi tốt nghiệp THPT 2027</div>
                     <h3 class="text-2xl md:text-3xl font-black text-gzDark">HÀNH TRÌNH TỐT NGHIỆP 12A7</h3>
                     <p class="font-handwrite text-xl text-gray-700">"Chúc 12A7 THCS-THPT Hà Thành thi tốt đỗ nguyện vọng 1 hết nha!"</p>
                 </div>
                 <div class="grid grid-cols-4 gap-2.5 text-center">
-                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]">
-                        <span id="cd-days" class="text-2xl font-black text-gzPink">00</span>
-                        <span class="block text-[9px] text-gray-600 font-extrabold uppercase">Ngày</span>
-                    </div>
-                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]">
-                        <span id="cd-hours" class="text-2xl font-black text-gzBlueSky">00</span>
-                        <span class="block text-[9px] text-gray-600 font-extrabold uppercase">Giờ</span>
-                    </div>
-                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]">
-                        <span id="cd-mins" class="text-2xl font-black text-gzOrange">00</span>
-                        <span class="block text-[9px] text-gray-600 font-extrabold uppercase">Phút</span>
-                    </div>
-                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]">
-                        <span id="cd-secs" class="text-2xl font-black text-gzPurple">00</span>
-                        <span class="block text-[9px] text-gray-600 font-extrabold uppercase">Giây</span>
-                    </div>
+                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]"><span id="cd-days" class="text-2xl font-black text-gzPink">00</span><span class="block text-[9px] text-gray-600 font-extrabold uppercase">Ngày</span></div>
+                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]"><span id="cd-hours" class="text-2xl font-black text-gzBlueSky">00</span><span class="block text-[9px] text-gray-600 font-extrabold uppercase">Giờ</span></div>
+                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]"><span id="cd-mins" class="text-2xl font-black text-gzOrange">00</span><span class="block text-[9px] text-gray-600 font-extrabold uppercase">Phút</span></div>
+                    <div class="bg-white p-2.5 rounded-2xl border-3 border-gzDark shadow-neo min-w-[65px]"><span id="cd-secs" class="text-2xl font-black text-gzPurple">00</span><span class="block text-[9px] text-gray-600 font-extrabold uppercase">Giây</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Dynamic Photo Showcase Grid -->
         <section class="px-4 md:px-8 py-8 max-w-7xl mx-auto w-full flex-grow">
-            
-            <!-- Filters Bar -->
             <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
                 <div class="flex flex-wrap items-center gap-2" id="filter-bar">
-                    <button onclick="filterCategory('Tất cả')" class="filter-btn px-4 py-2 rounded-2xl bg-gzDark text-white font-black text-xs uppercase tracking-wider border-2 border-gzDark shadow-neo transition">Tất Cả 12A7</button>
-                    <button onclick="filterCategory('Kỷ Yếu')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzYellowLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Album Kỷ Yếu 🎓</button>
-                    <button onclick="filterCategory('Nữ')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzPinkLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Nữ Vương 👑</button>
-                    <button onclick="filterCategory('Nam')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzBlueLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Nam Thần ⚡</button>
-                    <button onclick="filterCategory('Tập Thể')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzYellowLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Kỷ Niệm Lớp 💛</button>
+                    <button data-cat="Tất cả" onclick="filterCategory('Tất cả')" class="filter-btn px-4 py-2 rounded-2xl bg-gzDark text-white font-black text-xs uppercase tracking-wider border-2 border-gzDark shadow-neo transition">Tất Cả 12A7</button>
+                    <button data-cat="Kỷ Yếu" onclick="filterCategory('Kỷ Yếu')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzYellowLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Album Kỷ Yếu 🎓</button>
+                    <button data-cat="Nữ" onclick="filterCategory('Nữ')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzPinkLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Nữ Vương 👑</button>
+                    <button data-cat="Nam" onclick="filterCategory('Nam')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzBlueLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Nam Thần ⚡</button>
+                    <button data-cat="Tập Thể" onclick="filterCategory('Tập Thể')" class="filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzYellowLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition">Kỷ Niệm Lớp 💛</button>
                 </div>
-
                 <button onclick="startPresentationMode()" class="px-4 py-2 rounded-2xl bg-gzYellow text-gzDark font-black text-xs uppercase tracking-wider border-3 border-gzDark shadow-neo hover:scale-105 transition flex items-center gap-2">
-                    <i class="fa-solid fa-expand"></i> Phóng Slide Canva Dual-Realm
+                    <span class="not-italic">⛶</span> Trình chiếu toàn màn hình
                 </button>
             </div>
-
-            <!-- Polaroid Photo Wall -->
-            <div id="photo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                <!-- Photo Cards injected via JS -->
-            </div>
+            <div id="photo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
         </section>
 
-        <!-- Secret Notes Locker Section -->
         <section class="px-4 md:px-8 py-10 max-w-7xl mx-auto w-full border-t-4 border-gzDark mt-6">
             <div class="text-center mb-8">
                 <span class="text-gzDark font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full bg-gzYellow border-2 border-gzDark shadow-sm">Lưu Bút Secret Notes 12A7</span>
                 <h3 class="text-3xl md:text-4xl font-black text-gzDark mt-2">GỬI LỜI NHẮN CHO BẠN BÈ HÀ THÀNH</h3>
                 <p class="font-handwrite text-2xl text-gray-700 mt-1">Dán một chiếc Note trao gửi tâm tư trước ngày ra trường nhé!</p>
             </div>
-
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Add Wish Form -->
                 <div class="bg-white p-5 rounded-3xl border-4 border-gzDark shadow-neo-yellow">
-                    <h4 class="font-black text-base text-gzDark mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-pen-nib text-gzPink"></i> Viết Sticky Note 12A7
-                    </h4>
+                    <h4 class="font-black text-base text-gzDark mb-3 flex items-center gap-2"><span class="not-italic">✏️</span> Viết Sticky Note 12A7</h4>
                     <form onsubmit="handleWishSubmit(event)" class="space-y-3">
                         <div>
                             <label class="block text-xs font-black text-gzDark mb-1">Tên bạn (hoặc Biệt danh)</label>
@@ -488,39 +266,29 @@
                             </select>
                         </div>
                         <button type="submit" class="w-full py-3 rounded-2xl bg-gzYellow text-gzDark font-black text-xs uppercase tracking-wider border-3 border-gzDark shadow-neo hover:bg-gzOrange transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-sticky-note"></i> Dán Lên Bảng Lưu Bút
+                            <span class="not-italic">📝</span> Dán Lên Bảng Lưu Bút
                         </button>
                     </form>
                 </div>
-
-                <!-- Sticky Notes Wall Grid -->
-                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="wishes-wall">
-                    <!-- Injected via JS -->
-                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="wishes-wall"></div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="mt-auto py-6 text-center border-t-4 border-gzDark bg-white text-gray-700 text-xs font-bold">
-            <p>Trường THCS-THPT Hà Thành • Lớp 12A7 (Niên khóa 2023 - 2026) © Gen Z Yearbook Edition</p>
+            <p>Trường THCS-THPT Hà Thành • Lớp 12A7 (Niên khóa 2024 - 2027) © Gen Z Yearbook Edition</p>
         </footer>
-
     </div>
 
-    <!-- DUAL-REALM CANVA PRESENTATION FULLSCREEN SLIDE MODAL -->
+    <!-- PRESENTATION MODAL -->
     <div id="presentation-modal" class="fixed inset-0 z-50 bg-gzBg/95 backdrop-blur-xl hidden flex-col justify-between p-4 md:p-8">
-        
-        <!-- Top Navigation Controls -->
         <div class="flex items-center justify-between z-20">
             <div class="flex items-center gap-3">
                 <span class="w-3.5 h-3.5 rounded-full bg-gzPink animate-ping"></span>
                 <span class="font-black text-sm md:text-base tracking-wider text-gzDark flex items-center gap-2">
-                    <span id="slide-realm-indicator" class="px-3 py-1 rounded-full text-xs text-white bg-gzPink border-2 border-gzDark">NỮ REALM 🌸</span>
-                    SLIDE PRESENTATION 12A7 HÀ THÀNH
+                    <span id="slide-realm-indicator" class="px-3 py-1 rounded-full text-xs text-white bg-gzPink border-2 border-gzDark">PINK REALM 🌸</span>
+                    TRÌNH CHIẾU 12A7 HÀ THÀNH
                 </span>
             </div>
-
-            <!-- Slide FX & Audio controls -->
             <div class="flex items-center gap-2">
                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border-2 border-gzDark shadow-sm">
                     <span class="text-xs text-gray-600 font-bold hidden sm:inline">Chuyển cảnh:</span>
@@ -530,36 +298,19 @@
                         <option value="flip">3D Flip Slide</option>
                     </select>
                 </div>
-
                 <button onclick="toggleAutoPlay()" id="autoplay-btn" class="px-3.5 py-1.5 rounded-2xl bg-gzPurple text-white font-black text-xs border-2 border-gzDark shadow-sm flex items-center gap-2 hover:scale-105 transition">
-                    <i class="fa-solid fa-play" id="autoplay-icon"></i> <span id="autoplay-text" class="hidden sm:inline">Tự Động Chiếu</span>
+                    <span class="not-italic" id="autoplay-icon">▶</span> <span id="autoplay-text" class="hidden sm:inline">Tự Động Chiếu</span>
                 </button>
-
-                <button onclick="closePresentationMode()" class="w-9 h-9 rounded-2xl bg-white border-2 border-gzDark text-gzDark hover:bg-gzPink hover:text-white flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
+                <button onclick="closePresentationMode()" class="w-9 h-9 rounded-2xl bg-white border-2 border-gzDark text-gzDark hover:bg-gzPink hover:text-white flex items-center justify-center transition"><span class="not-italic">✕</span></button>
             </div>
         </div>
-
-        <!-- Slide Presentation Frame Dual Theme Container -->
         <div class="relative my-auto w-full max-w-5xl mx-auto flex items-center justify-center min-h-[60vh]">
-            
-            <button onclick="prevSlide()" class="absolute -left-2 md:-left-8 z-20 w-11 h-11 rounded-2xl bg-white border-3 border-gzDark text-gzDark hover:bg-gzYellow flex items-center justify-center transition shadow-neo">
-                <i class="fa-solid fa-chevron-left text-lg"></i>
-            </button>
-
-            <!-- Dynamic Slide Frame Card -->
+            <button onclick="prevSlide()" class="absolute -left-2 md:-left-8 z-20 w-11 h-11 rounded-2xl bg-white border-3 border-gzDark text-gzDark hover:bg-gzYellow flex items-center justify-center transition shadow-neo"><span class="not-italic">‹</span></button>
             <div id="slide-frame" class="w-full bg-white p-4 md:p-8 rounded-3xl border-4 border-gzDark relative overflow-hidden flex flex-col md:flex-row items-center gap-6 md:gap-8 transition-colors duration-500">
-                
-                <!-- Slide Image Showcase -->
                 <div class="w-full md:w-3/5 aspect-[4/3] rounded-2xl overflow-hidden relative border-3 border-gzDark bg-gzBg shadow-md">
-                    <img id="slide-img" src="" alt="Slide" class="w-full h-full object-cover">
-                    <div id="slide-sticker" class="absolute top-3 right-3 px-3 py-1 rounded-2xl bg-gzYellow text-gzDark border-2 border-gzDark font-handwrite text-lg shadow-sm rotate-[4deg]">
-                        ✨ 12A7 Hà Thành
-                    </div>
+                    <div id="slide-media" class="w-full h-full flex items-center justify-center bg-black/5"></div>
+                    <div id="slide-sticker" class="absolute top-3 right-3 px-3 py-1 rounded-2xl bg-gzYellow text-gzDark border-2 border-gzDark font-handwrite text-lg shadow-sm rotate-[4deg]">✨ 12A7 Hà Thành</div>
                 </div>
-
-                <!-- Slide Metadata -->
                 <div class="w-full md:w-2/5 text-left flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-2 mb-2">
@@ -569,38 +320,41 @@
                         <h3 id="slide-title" class="text-2xl md:text-3xl font-black text-gzDark mb-2"></h3>
                         <p id="slide-desc" class="text-xs md:text-sm text-gray-700 leading-relaxed mb-6 font-medium"></p>
                     </div>
-
                     <div class="border-t-2 border-gzDark pt-3 flex items-center justify-between">
                         <span id="slide-author" class="font-handwrite text-2xl font-bold"></span>
-                        <div class="text-xs text-gray-600 font-black">
-                            Slide <span id="slide-current-idx" class="text-gzDark font-black">1</span> / <span id="slide-total-idx">6</span>
-                        </div>
+                        <div class="text-xs text-gray-600 font-black">Slide <span id="slide-current-idx" class="text-gzDark font-black">1</span> / <span id="slide-total-idx">6</span></div>
                     </div>
                 </div>
             </div>
-
-            <button onclick="nextSlide()" class="absolute -right-2 md:-right-8 z-20 w-11 h-11 rounded-2xl bg-white border-3 border-gzDark text-gzDark hover:bg-gzYellow flex items-center justify-center transition shadow-neo">
-                <i class="fa-solid fa-chevron-right text-lg"></i>
-            </button>
+            <button onclick="nextSlide()" class="absolute -right-2 md:-right-8 z-20 w-11 h-11 rounded-2xl bg-white border-3 border-gzDark text-gzDark hover:bg-gzYellow flex items-center justify-center transition shadow-neo"><span class="not-italic">›</span></button>
         </div>
-
-        <!-- Progress Bar -->
         <div class="w-full max-w-5xl mx-auto z-20">
-            <div class="w-full bg-white h-3 rounded-full border-2 border-gzDark overflow-hidden">
-                <div id="presentation-progress" class="bg-gzPink h-full w-0 transition-all duration-300"></div>
-            </div>
+            <div class="w-full bg-white h-3 rounded-full border-2 border-gzDark overflow-hidden"><div id="presentation-progress" class="bg-gzPink h-full w-0 transition-all duration-300"></div></div>
         </div>
-
     </div>
 
-    <!-- Upload Photo Modal -->
+    <!-- UNLOCK (PASSWORD) MODAL -->
+    <div id="unlock-modal" class="fixed inset-0 z-[55] bg-gzDark/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="relative max-w-sm w-full bg-white p-6 rounded-3xl border-4 border-gzDark shadow-neo-yellow">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-black text-base text-gzDark flex items-center gap-2"><span class="not-italic">🔐</span> Mật khẩu của lớp 12A7</h3>
+                <button onclick="closeUnlockModal()" class="text-gray-500 hover:text-gzDark"><span class="not-italic">✕</span></button>
+            </div>
+            <p class="text-xs text-gray-600 font-medium mb-3 leading-snug">Ai cũng xem được ảnh & lời chúc. Muốn đăng ảnh/video, gửi lời nhắn hay dán sticker, hãy nhập mật khẩu mà lớp trưởng gửi cho bạn.</p>
+            <form onsubmit="handleUnlockSubmit(event)" class="space-y-3">
+                <input type="password" id="unlock-pw" required autocomplete="current-password" placeholder="Nhập mật khẩu..." class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2.5 text-sm font-bold text-gzDark focus:outline-none">
+                <div id="unlock-status" class="text-xs font-bold hidden"></div>
+                <button type="submit" id="unlock-btn" class="w-full py-3 rounded-2xl bg-gzYellow text-gzDark font-black text-xs uppercase tracking-wider border-3 border-gzDark shadow-neo hover:bg-gzOrange transition">Mở khóa</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- UPLOAD MODAL -->
     <div id="upload-modal" class="fixed inset-0 z-50 bg-gzDark/70 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="relative max-w-md w-full bg-white p-6 rounded-3xl border-4 border-gzDark shadow-neo-blue">
+        <div class="relative max-w-md w-full max-h-[92vh] overflow-y-auto bg-white p-6 rounded-3xl border-4 border-gzDark shadow-neo-blue">
             <div class="flex items-center justify-between mb-4">
-                <h3 class="font-black text-base text-gzDark flex items-center gap-2">
-                    <i class="fa-solid fa-cloud-arrow-up text-gzBlueSky"></i> Thêm Kỷ Niệm 12A7 Hà Thành
-                </h3>
-                <button onclick="closeUploadModal()" class="text-gray-500 hover:text-gzDark"><i class="fa-solid fa-xmark text-xl"></i></button>
+                <h3 class="font-black text-base text-gzDark flex items-center gap-2"><span class="not-italic">☁️</span> Đăng Ảnh / Video Kỷ Niệm 12A7</h3>
+                <button onclick="closeUploadModal()" class="text-gray-500 hover:text-gzDark"><span class="not-italic">✕</span></button>
             </div>
             <form onsubmit="handleUploadSubmit(event)" class="space-y-3">
                 <div>
@@ -608,7 +362,7 @@
                     <input type="text" id="up-title" required placeholder="VD: Buổi Luyện Thi THPT, Picnic Lớp..." class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2 text-xs font-bold text-gzDark focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-gzDark mb-1">Phân Loại Phân Khu</label>
+                    <label class="block text-xs font-black text-gzDark mb-1">Phân loại</label>
                     <select id="up-category" class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2 text-xs font-bold text-gzDark focus:outline-none">
                         <option value="Kỷ Yếu">Album Kỷ Yếu 🎓</option>
                         <option value="Nữ">Nữ Vương 👑 (Pink Realm)</option>
@@ -617,160 +371,149 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-gzDark mb-1">Link Ảnh (URL)</label>
-                    <input type="url" id="up-image" required placeholder="https://images.unsplash.com/..." class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2 text-xs font-bold text-gzDark focus:outline-none">
+                    <label class="block text-xs font-black text-gzDark mb-1">Chọn ảnh / video (chọn được nhiều file)</label>
+                    <input type="file" id="up-files" required multiple accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm" class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3 py-2 text-xs font-bold text-gzDark">
+                    <p class="text-[11px] text-gray-600 mt-1 leading-snug">Lưu thẳng vào Google Drive của lớp, giữ nguyên chất lượng gốc. Hỗ trợ JPG, PNG, WebP, GIF, MP4, WebM — tối đa 20 MB/file. Ảnh iPhone dạng HEIC / video MOV cần đổi sang JPG / MP4 (Cài đặt Camera → Định dạng → “Tương thích nhất”).</p>
+                    <div id="up-status" class="text-xs font-bold mt-2 hidden"></div>
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-gzDark mb-1">Tên Thành Viên / Người Đăng</label>
+                    <label class="block text-xs font-black text-gzDark mb-1">Tên của bạn</label>
                     <input type="text" id="up-author" required placeholder="VD: Khánh Linh 12A7" class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2 text-xs font-bold text-gzDark focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-black text-gzDark mb-1">Cảm nghĩ ngắn</label>
+                    <label class="block text-xs font-black text-gzDark mb-1">Cảm nghĩ ngắn (không bắt buộc)</label>
                     <textarea id="up-desc" rows="2" placeholder="Đôi dòng kỷ niệm đáng nhớ..." class="w-full bg-gzBg border-2 border-gzDark rounded-2xl px-3.5 py-2 text-xs font-bold text-gzDark focus:outline-none resize-none"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3 rounded-2xl bg-gzBlueSky text-white font-black text-xs uppercase tracking-wider border-3 border-gzDark shadow-neo hover:bg-gzDark transition">
-                    Tải Kỷ Niệm Lên
-                </button>
+                <button type="submit" id="up-btn" class="w-full py-3 rounded-2xl bg-gzBlueSky text-white font-black text-xs uppercase tracking-wider border-3 border-gzDark shadow-neo hover:bg-gzDark transition">Đăng Lên Album Lớp</button>
             </form>
         </div>
     </div>
 
-    <!-- Application Script -->
     <script>
-        // --- DATA STORE FOR CLASS 12A7 THCS-THPT HÀ THÀNH ---
-        let photos = [
-            {
-                id: 1,
-                title: "Bộ Ảnh Kỷ Yếu 12A7 Hà Thành",
-                category: "Kỷ Yếu",
-                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-                author: "~ Studio Tuổi 18",
-                desc: "Ngày chụp kỷ yếu tràn ngập tiếng cười của tập thể 12A7 Trường THCS-THPT Hà Thành.",
-                date: "15/05/2026",
-                sticker: "✨ Hot Trend 12A7",
-                placedStickers: [
-                    { symbol: '🎓', x: 80, y: 15, scale: 1.2, rot: 10 }
-                ]
-            },
-            {
-                id: 2,
-                title: "Hội Nữ Thần Hà Thành Áo Dài",
-                category: "Nữ",
-                image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-                author: "~ Linh Chi 12A7",
-                desc: "Những nụ cười dịu dàng, rạng rỡ nhất của các bạn nữ 12A7 trong tà áo dài trắng tinh khôi.",
-                date: "12/05/2026",
-                sticker: "🌸 Pink Realm 12A7",
-                placedStickers: [
-                    { symbol: '💖', x: 82, y: 12, scale: 1.3, rot: 5 },
-                    { symbol: '🌸', x: 10, y: 15, scale: 1.1, rot: -10 }
-                ]
-            },
-            {
-                id: 3,
-                title: "Team Nam Sinh Quậy Tới Bến",
-                category: "Nam",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-                author: "~ Đức Anh 12A7",
-                desc: "Hội con trai 12A7 siêu quậy, nhiệt huyết trên sân bóng và cực kỳ ga-lăng với phe nữ.",
-                date: "10/05/2026",
-                sticker: "⚡ Electric Boy",
-                placedStickers: [
-                    { symbol: '⚡', x: 82, y: 12, scale: 1.2, rot: 12 },
-                    { symbol: '😎', x: 12, y: 12, scale: 1.1, rot: -8 }
-                ]
-            },
-            {
-                id: 4,
-                title: "Lễ Trưởng Thành & Tri Ân",
-                category: "Tập Thể",
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-                author: "~ Lớp Trưởng 12A7",
-                desc: "Khoảnh khắc xúc động khi cả lớp 12A7 THCS-THPT Hà Thành trao nhau những cái ôm chia tay.",
-                date: "01/05/2026",
-                sticker: "🎓 Mãi Là Bạn",
-                placedStickers: [
-                    { symbol: '🧋', x: 82, y: 15, scale: 1.2, rot: 0 }
-                ]
-            },
-            {
-                id: 5,
-                title: "Góc Sân Trường Hà Thành",
-                category: "Tập Thể",
-                image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
-                author: "~ Minh Hoàng",
-                desc: "Nơi 12A7 tụ tập ăn vặt, làm bài tập nhóm và nghêu ngao vài câu hát mỗi giờ ra chơi.",
-                date: "28/04/2026",
-                sticker: "🏫 Hà Thành Memories",
-                placedStickers: []
-            },
-            {
-                id: 6,
-                title: "Concept Kỷ Yếu Retro 12A7",
-                category: "Kỷ Yếu",
-                image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
-                author: "~ Ekip Hà Thành",
-                desc: "Hóa thân thành học sinh những năm 90 độc đáo, mang đậm phong cách riêng của 12A7.",
-                date: "20/04/2026",
-                sticker: "📸 Vintage Vibe",
-                placedStickers: []
-            }
-        ];
+        // =====================================================================
+        // CẤU HÌNH: dán URL Web App của Google Apps Script vào đây
+        // (dạng https://script.google.com/macros/s/XXXXXXXX/exec)
+        // =====================================================================
+        const API_URL = 'DÁN_URL_WEB_APP_VÀO_ĐÂY';
 
-        let wishes = [
-            { author: "Bích Phương 12A7", content: "Chúc 12A7 THCS-THPT Hà Thành mình ai cũng đỗ NV1 Đại Học nha!", color: "pink" },
-            { author: "Tuấn Kiệt 12A7", content: "Cảm ơn ae phe Nam và các bạn Nữ đã cho tớ một thời cấp 3 vô cùng rực rỡ!", color: "blue" },
-            { author: "Cô Chủ Nhiệm 12A7", content: "Chúc các con 12A7 tự tin, làm bài thi thật tốt và chạm tới ước mơ nhé!", color: "yellow" }
-        ];
+        let photos = [], wishes = [], lastSig = '';
+        let pw = '', role = '';
+        let pendingAction = null;
+        const hasApi = () => /^https:\/\/script\.google\.com\//.test(API_URL);
+        const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const sameCat = p => currentCategory === 'Tất cả' || p.category === currentCategory;
+
+        // Owner token (để chỉ xóa được bài của chính mình)
+        let myOwner = '';
+        try {
+            myOwner = localStorage.getItem('a7owner') || '';
+            if (!myOwner) { myOwner = 'o' + Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem('a7owner', myOwner); }
+            pw = localStorage.getItem('a7pw') || ''; role = localStorage.getItem('a7role') || '';
+        } catch (e) { if (!myOwner) myOwner = 'o' + Math.random().toString(36).slice(2); }
+
+        // ---------- Media (Google Drive) ----------
+        const imgUrl = id => 'https://lh3.googleusercontent.com/d/' + id;
+        const thumbUrl = id => 'https://drive.google.com/thumbnail?id=' + id + '&sz=w2000';
+        function mediaTag(p, cls) {
+            if (p.kind === 'video') {
+                return `<iframe src="https://drive.google.com/file/d/${esc(p.fileId)}/preview" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`;
+            }
+            return `<img src="${imgUrl(esc(p.fileId))}" alt="${esc(p.title)}" class="${cls}" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${thumbUrl(esc(p.fileId))}';}else{this.alt='Chưa tải được ảnh'}">`;
+        }
+
+        function toast(msg) {
+            let t = document.getElementById('toast');
+            if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'fixed top-20 left-1/2 -translate-x-1/2 z-[60] px-4 py-2 rounded-2xl bg-gzDark text-white text-xs font-bold border-2 border-gzDark shadow-neo'; document.body.appendChild(t); }
+            t.textContent = msg; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', 4000);
+        }
+
+        // ---------- API ----------
+        async function apiPost(body) {
+            if (!hasApi()) throw new Error('Chưa cấu hình API_URL');
+            const r = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body) });
+            return r.json();
+        }
+        async function loadData(force) {
+            if (!hasApi()) { return; }
+            try {
+                const r = await fetch(API_URL + '?action=list&owner=' + encodeURIComponent(myOwner) + '&t=' + Date.now());
+                const d = await r.json();
+                if (!d.ok) return;
+                const sig = JSON.stringify(d);
+                if (!force && sig === lastSig) return;
+                lastSig = sig; photos = d.photos || []; wishes = d.wishes || [];
+                renderPhotos(); renderWishes();
+            } catch (err) { if (force) toast('Chưa tải được dữ liệu từ Google Drive'); }
+        }
+        function handleApiError(r) {
+            if (r && r.error === 'BAD_PASSWORD') { lockOut(); toast('Mật khẩu không đúng hoặc đã đổi, hãy nhập lại'); openUnlockModal(); }
+            else toast((r && r.error) || 'Có lỗi xảy ra');
+        }
+
+        // ---------- Password / Unlock ----------
+        function updateLockUI() {
+            document.getElementById('lock-icon').textContent = pw ? '🔓' : '🔒';
+            document.getElementById('lock-text').textContent = pw ? (role === 'admin' ? 'Admin • Khóa lại' : 'Đã mở khóa • Khóa lại') : 'Nhập mật khẩu lớp';
+        }
+        function lockOut() { pw = ''; role = ''; try { localStorage.removeItem('a7pw'); localStorage.removeItem('a7role'); } catch (e) {} updateLockUI(); renderPhotos(); }
+        function toggleLock() { if (pw) { lockOut(); toast('Đã khóa lại'); } else openUnlockModal(); }
+        function requireUnlock(cb) { if (pw) { cb(); } else { pendingAction = cb; openUnlockModal(); } }
+        function openUnlockModal() { const m = document.getElementById('unlock-modal'); m.classList.remove('hidden'); m.classList.add('flex'); setTimeout(() => document.getElementById('unlock-pw').focus(), 50); }
+        function closeUnlockModal() { const m = document.getElementById('unlock-modal'); m.classList.add('hidden'); m.classList.remove('flex'); pendingAction = null; }
+        async function handleUnlockSubmit(e) {
+            e.preventDefault();
+            const v = document.getElementById('unlock-pw').value;
+            const st = document.getElementById('unlock-status'), btn = document.getElementById('unlock-btn');
+            const say = (m, bad) => { st.classList.remove('hidden'); st.textContent = m; st.className = 'text-xs font-bold ' + (bad ? 'text-gzPinkDark' : 'text-gzBlueDark'); };
+            if (!hasApi()) { say('Trang chưa được nối với Google Apps Script (xem API_URL trong code).', true); return; }
+            btn.disabled = true; say('Đang kiểm tra...');
+            try {
+                const r = await apiPost({ action: 'verify', password: v });
+                if (!r.ok) { say('Sai mật khẩu, thử lại nhé!', true); btn.disabled = false; return; }
+                pw = v; role = r.role;
+                try { localStorage.setItem('a7pw', pw); localStorage.setItem('a7role', role); } catch (x) {}
+                const cb = pendingAction; pendingAction = null;
+                document.getElementById('unlock-pw').value = ''; st.classList.add('hidden');
+                const m = document.getElementById('unlock-modal'); m.classList.add('hidden'); m.classList.remove('flex');
+                updateLockUI(); renderPhotos(); toast('Đã mở khóa 🎉');
+                if (cb) cb();
+            } catch (err) { say('Không kết nối được máy chủ. Kiểm tra lại API_URL / mạng.', true); }
+            btn.disabled = false;
+        }
 
         let currentCategory = 'Tất cả';
-        let activeSticker = null; // { symbol: '🌸', category: 'nu' }
+        let activeSticker = null;
         let currentSlideIdx = 0;
         let isAutoPlaying = false;
         let autoPlayTimer = null;
 
-        // --- COUNTDOWN TIMER ---
+        // --- COUNTDOWN ---
         function updateCountdown() {
-            const targetDate = new Date('2027-06-25T00:00:00').getTime();
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
+            const diff = new Date('2027-06-25T00:00:00').getTime() - Date.now();
             if (diff <= 0) return;
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('cd-days').innerText = days < 10 ? '0' + days : days;
-            document.getElementById('cd-hours').innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById('cd-mins').innerText = mins < 10 ? '0' + mins : mins;
-            document.getElementById('cd-secs').innerText = secs < 10 ? '0' + secs : secs;
+            const days = Math.floor(diff / 86400000), hours = Math.floor((diff % 86400000) / 3600000),
+                  mins = Math.floor((diff % 3600000) / 60000), secs = Math.floor((diff % 60000) / 1000);
+            const f = n => n < 10 ? '0' + n : n;
+            document.getElementById('cd-days').innerText = f(days);
+            document.getElementById('cd-hours').innerText = f(hours);
+            document.getElementById('cd-mins').innerText = f(mins);
+            document.getElementById('cd-secs').innerText = f(secs);
         }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        setInterval(updateCountdown, 1000); updateCountdown();
 
-        // --- STICKER ENGINE SELECTION & CURSOR PREVIEW ---
+        // --- STICKERS ---
         function selectActiveSticker(symbol, cat) {
             activeSticker = { symbol, cat };
-            
-            // Update Cursor Preview Badge
             const cursorPrev = document.getElementById('sticker-cursor-preview');
-            cursorPrev.innerText = symbol;
-            cursorPrev.classList.remove('hidden');
-
-            // Update Badge Status
+            cursorPrev.innerText = symbol; cursorPrev.classList.remove('hidden');
             const badge = document.getElementById('active-stk-badge');
             let colorBg = 'bg-gzYellow';
             if (cat === 'nu') colorBg = 'bg-gzPink text-white';
             if (cat === 'nam') colorBg = 'bg-gzBlueSky text-white';
-
             badge.className = `px-3 py-1.5 rounded-full ${colorBg} font-black text-xs border-2 border-gzDark animate-bounce`;
             badge.innerText = `Đã chọn: ${symbol} (Click dán)`;
-
             document.getElementById('dock-status').innerText = `Đang chọn: ${symbol}. Click lên ảnh!`;
         }
-
         function clearActiveStickerSelection() {
             activeSticker = null;
             document.getElementById('sticker-cursor-preview').classList.add('hidden');
@@ -779,105 +522,100 @@
             badge.innerText = 'Chưa chọn';
             document.getElementById('dock-status').innerText = 'Click sticker & dán lên ảnh!';
         }
-
-        // Track cursor for floating sticker preview
         document.addEventListener('mousemove', (e) => {
             if (!activeSticker) return;
-            const cursorPrev = document.getElementById('sticker-cursor-preview');
-            cursorPrev.style.left = e.clientX + 'px';
-            cursorPrev.style.top = e.clientY + 'px';
+            const c = document.getElementById('sticker-cursor-preview');
+            c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px';
         });
 
+        function saveStickers(photoId, list) {
+            return apiPost({ action: 'setStickers', password: pw, id: photoId, stickers: list })
+                .then(r => { if (!r.ok) handleApiError(r); else lastSig = ''; }).catch(() => toast('Không lưu được sticker'));
+        }
+
         function handlePhotoCanvasClick(e, photoId) {
-            if (!activeSticker) return;
-
+            if (!activeSticker || e.target.tagName === 'VIDEO' || e.target.tagName === 'IFRAME') return;
             const rect = e.currentTarget.getBoundingClientRect();
-            const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
-            const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
-
-            const targetPhoto = photos.find(p => p.id === photoId);
-            if (targetPhoto) {
-                targetPhoto.placedStickers.push({
-                    symbol: activeSticker.symbol,
-                    x: Math.min(Math.max(xPercent, 5), 85),
-                    y: Math.min(Math.max(yPercent, 5), 85),
-                    scale: 1,
-                    rot: Math.floor(Math.random() * 20) - 10
-                });
-
-                renderPhotos();
-
-                confetti({
-                    particleCount: 25,
-                    spread: 50,
-                    origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight }
-                });
-            }
+            const cx = e.clientX, cy = e.clientY;
+            const x = ((cx - rect.left) / rect.width) * 100, y = ((cy - rect.top) / rect.height) * 100;
+            const sym = activeSticker.symbol;
+            requireUnlock(() => {
+                const t = photos.find(p => p.id === photoId); if (!t) return;
+                const list = [...(t.placedStickers || []), { symbol: sym, x: Math.min(Math.max(x, 5), 85), y: Math.min(Math.max(y, 5), 85), scale: 1, rot: Math.floor(Math.random() * 20) - 10 }];
+                t.placedStickers = list; renderPhotos();
+                saveStickers(photoId, list);
+                confetti({ particleCount: 25, spread: 50, origin: { x: cx / window.innerWidth, y: cy / window.innerHeight } });
+            });
         }
-
-        function removeSticker(photoId, stickerIdx, event) {
+        function removeSticker(photoId, idx, event) {
             event.stopPropagation();
-            const targetPhoto = photos.find(p => p.id === photoId);
-            if (targetPhoto) {
-                targetPhoto.placedStickers.splice(stickerIdx, 1);
-                renderPhotos();
-            }
+            requireUnlock(() => {
+                const t = photos.find(p => p.id === photoId); if (!t) return;
+                const list = (t.placedStickers || []).filter((_, i) => i !== idx);
+                t.placedStickers = list; renderPhotos(); saveStickers(photoId, list);
+            });
+        }
+        async function deletePhoto(id) {
+            if (!confirm('Xóa bài đăng này?')) return;
+            requireUnlock(async () => {
+                try {
+                    const r = await apiPost({ action: 'deletePhoto', password: pw, id, owner: myOwner });
+                    if (!r.ok) return handleApiError(r);
+                    toast('Đã xóa'); loadData(true);
+                } catch (e) { toast('Không xóa được, thử lại nhé'); }
+            });
         }
 
-        // --- RENDER POLAROID PHOTO GRID ---
+        // --- RENDER PHOTOS ---
         function renderPhotos() {
             const grid = document.getElementById('photo-grid');
             grid.innerHTML = '';
-
-            const filtered = photos.filter(p => currentCategory === 'Tất cả' || p.category === currentCategory);
-
+            if (!hasApi()) {
+                grid.innerHTML = '<div class="col-span-full neo-card p-8 text-center"><div class="text-5xl mb-2">⚙️</div><p class="font-black text-lg">Chưa kết nối Google Drive</p><p class="text-sm text-gray-600 font-medium">Dán URL Web App của Google Apps Script vào biến <code>API_URL</code> trong file HTML.</p></div>';
+                return;
+            }
+            const filtered = photos.filter(sameCat);
+            if (!filtered.length) {
+                grid.innerHTML = '<div class="col-span-full neo-card p-8 text-center"><div class="text-5xl mb-2">📸</div><p class="font-black text-lg">Chưa có kỷ niệm nào ở mục này</p><p class="text-sm text-gray-600 font-medium">Bấm “Đăng Ảnh / Video” để là người đầu tiên!</p></div>';
+                return;
+            }
             filtered.forEach((p, idx) => {
-                let cardThemeClass = 'theme-tapthe';
-                let badgeClass = 'bg-gzYellowLight text-gzDark border-gzDark';
-
-                if (p.category === 'Nữ') {
-                    cardThemeClass = 'theme-nu';
-                    badgeClass = 'bg-gzPinkLight text-gzPinkDark border-gzDark';
-                } else if (p.category === 'Nam') {
-                    cardThemeClass = 'theme-nam';
-                    badgeClass = 'bg-gzBlueLight text-gzBlueDark border-gzDark';
-                }
+                let cardThemeClass = 'theme-tapthe', badgeClass = 'bg-gzYellowLight text-gzDark border-gzDark';
+                if (p.category === 'Nữ') { cardThemeClass = 'theme-nu'; badgeClass = 'bg-gzPinkLight text-gzPinkDark border-gzDark'; }
+                else if (p.category === 'Nam') { cardThemeClass = 'theme-nam'; badgeClass = 'bg-gzBlueLight text-gzBlueDark border-gzDark'; }
 
                 const card = document.createElement('div');
                 card.className = `polaroid-frame rounded-3xl flex flex-col justify-between cursor-pointer ${cardThemeClass} group`;
-                
-                // Build Placed Stickers Markup
-                let stickersMarkup = p.placedStickers.map((stk, sIdx) => `
-                    <div class="placed-sticker group/stk" style="top: ${stk.y}%; left: ${stk.x}%; transform: rotate(${stk.rot}deg) scale(${stk.scale});">
-                        <span class="text-2xl filter drop-shadow hover:scale-125 transition">${stk.symbol}</span>
-                        <button onclick="removeSticker(${p.id}, ${sIdx}, event)" class="hidden group-hover/stk:flex absolute -top-2 -right-2 w-4 h-4 bg-gzPink text-white rounded-full text-[9px] items-center justify-center border border-gzDark">✕</button>
-                    </div>
-                `).join('');
 
+                const stickersMarkup = (p.placedStickers || []).map((stk, sIdx) => `
+                    <div class="placed-sticker group/stk" style="top: ${Number(stk.y)}%; left: ${Number(stk.x)}%; transform: rotate(${Number(stk.rot)}deg) scale(${Number(stk.scale) || 1});">
+                        <span class="text-2xl filter drop-shadow hover:scale-125 transition">${esc(stk.symbol)}</span>
+                        <button onclick="removeSticker('${esc(p.id)}', ${sIdx}, event)" class="hidden group-hover/stk:flex absolute -top-2 -right-2 w-4 h-4 bg-gzPink text-white rounded-full text-[9px] items-center justify-center border border-gzDark">✕</button>
+                    </div>`).join('');
+
+                const canDelete = p.mine || role === 'admin';
                 card.innerHTML = `
-                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 border-2 border-gzDark bg-gzBg sticker-canvas" onclick="handlePhotoCanvasClick(event, ${p.id})">
-                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 border-2 border-gzDark bg-gzBg sticker-canvas" onclick="handlePhotoCanvasClick(event, '${esc(p.id)}')">
+                        ${mediaTag(p, 'w-full h-full object-cover group-hover:scale-105 transition duration-500')}
                         <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider border-2 ${badgeClass}">
-                            ${p.category === 'Nữ' ? 'Nữ Realm 🌸' : (p.category === 'Nam' ? 'Boy Realm ⚡' : p.category)}
+                            ${p.category === 'Nữ' ? 'Pink Realm 🌸' : (p.category === 'Nam' ? 'Boy Realm ⚡' : esc(p.category))}
                         </span>
-                        <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-xl bg-white border-2 border-gzDark text-gzDark font-handwrite text-sm shadow-sm">
-                            ${p.sticker}
-                        </span>
+                        <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-xl bg-white border-2 border-gzDark text-gzDark font-handwrite text-sm shadow-sm">✨ Kỷ Niệm 12A7</span>
                         ${stickersMarkup}
                     </div>
                     <div>
                         <div class="flex items-center justify-between mb-1">
-                            <h4 class="font-black text-lg text-gzDark group-hover:text-gzPink transition" onclick="openPresentationAt(${idx})">${p.title}</h4>
+                            <h4 class="font-black text-lg text-gzDark group-hover:text-gzPink transition" onclick="openPresentationAt(${idx})">${esc(p.title)}</h4>
                         </div>
-                        <p class="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed font-medium">${p.desc}</p>
+                        <p class="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed font-medium">${esc(p.desc)}</p>
                     </div>
                     <div class="flex items-center justify-between border-t-2 border-gzDark pt-3 text-xs">
-                        <span class="font-handwrite text-xl font-bold ${p.category === 'Nữ' ? 'text-gzPink' : (p.category === 'Nam' ? 'text-gzBlueSky' : 'text-gzOrange')}">${p.author}</span>
-                        <button onclick="openPresentationAt(${idx})" class="px-2.5 py-1 rounded-xl bg-gzYellow text-gzDark border-2 border-gzDark font-black text-[10px] hover:bg-gzOrange transition">
-                            <i class="fa-solid fa-expand mr-1"></i>Xem Slide
-                        </button>
-                    </div>
-                `;
+                        <span class="font-handwrite text-xl font-bold ${p.category === 'Nữ' ? 'text-gzPink' : (p.category === 'Nam' ? 'text-gzBlueSky' : 'text-gzOrange')}">${esc(p.author)}</span>
+                        <span class="flex items-center gap-1.5">
+                            <button onclick="openPresentationAt(${idx})" class="px-2.5 py-1 rounded-xl bg-gzYellow text-gzDark border-2 border-gzDark font-black text-[10px] hover:bg-gzOrange transition"><span class="not-italic">⛶</span>Xem Slide</button>
+                            ${canDelete ? `<button onclick="deletePhoto('${esc(p.id)}')" title="Xóa bài" class="px-2 py-1 rounded-xl bg-white border-2 border-gzDark text-[10px] hover:bg-gzPink">🗑</button>` : ''}
+                        </span>
+                    </div>`;
                 grid.appendChild(card);
             });
         }
@@ -886,41 +624,29 @@
             currentCategory = cat;
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.className = 'filter-btn px-4 py-2 rounded-2xl bg-white hover:bg-gzYellowLight text-gzDark font-extrabold text-xs uppercase tracking-wider border-2 border-gzDark transition';
-                if (btn.innerText.includes(cat.toUpperCase()) || (cat === 'Tất cả' && btn.innerText.includes('TẤT CẢ'))) {
-                    btn.className = 'filter-btn px-4 py-2 rounded-2xl bg-gzDark text-white font-black text-xs uppercase tracking-wider border-2 border-gzDark shadow-neo transition';
-                }
+                if (btn.dataset.cat === cat) btn.className = 'filter-btn px-4 py-2 rounded-2xl bg-gzDark text-white font-black text-xs uppercase tracking-wider border-2 border-gzDark shadow-neo transition';
             });
             renderPhotos();
         }
 
-        // --- DUAL-REALM CANVA SLIDE SHOW PRESENTATION ENGINE ---
+        // --- PRESENTATION ---
         function startPresentationMode() {
-            currentSlideIdx = 0;
-            showSlide();
-            const modal = document.getElementById('presentation-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            if (!photos.length) { toast('Chưa có ảnh nào để chiếu'); return; }
+            currentSlideIdx = 0; showSlide();
+            const m = document.getElementById('presentation-modal'); m.classList.remove('hidden'); m.classList.add('flex');
         }
-
         function openPresentationAt(idx) {
-            currentSlideIdx = idx;
-            showSlide();
-            const modal = document.getElementById('presentation-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            currentSlideIdx = idx; showSlide();
+            const m = document.getElementById('presentation-modal'); m.classList.remove('hidden'); m.classList.add('flex');
         }
-
         function closePresentationMode() {
             if (isAutoPlaying) toggleAutoPlay();
-            const modal = document.getElementById('presentation-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+            document.getElementById('slide-media').innerHTML = '';
+            const m = document.getElementById('presentation-modal'); m.classList.add('hidden'); m.classList.remove('flex');
         }
-
         function showSlide() {
-            const filtered = photos.filter(p => currentCategory === 'Tất cả' || p.category === currentCategory);
+            const filtered = photos.filter(sameCat);
             if (filtered.length === 0) return;
-
             if (currentSlideIdx >= filtered.length) currentSlideIdx = 0;
             if (currentSlideIdx < 0) currentSlideIdx = filtered.length - 1;
 
@@ -928,189 +654,164 @@
             const frame = document.getElementById('slide-frame');
             const realmIndicator = document.getElementById('slide-realm-indicator');
             const fx = document.getElementById('transition-fx').value;
+            frame.style.border = '4px solid #1E293B';
 
-            // DUAL-REALM COLOR ADAPTATION FOR SLIDE CARD
             if (p.category === 'Nam') {
-                frame.style.border = '4px solid #1E293B';
                 frame.style.boxShadow = '8px 8px 0px #3A86EF';
                 frame.style.background = 'linear-gradient(135deg, #FFFFFF 70%, #EAF2FF 100%)';
-                
                 realmIndicator.className = 'px-3 py-1 rounded-full text-xs text-white bg-gzBlueSky border-2 border-gzDark';
                 realmIndicator.innerText = 'BOY REALM ⚡ (PHE NAM)';
-
                 document.getElementById('slide-badge').className = 'px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gzBlueLight text-gzBlueDark border-2 border-gzDark';
                 document.getElementById('slide-author').className = 'font-handwrite text-2xl text-gzBlueSky font-bold';
             } else if (p.category === 'Nữ') {
-                frame.style.border = '4px solid #1E293B';
                 frame.style.boxShadow = '8px 8px 0px #FF6B9B';
                 frame.style.background = 'linear-gradient(135deg, #FFFFFF 70%, #FFE8F0 100%)';
-
                 realmIndicator.className = 'px-3 py-1 rounded-full text-xs text-white bg-gzPink border-2 border-gzDark';
-                realmIndicator.innerText = 'NỮ REALM 🌸 (PHE NỮ)';
-
+                realmIndicator.innerText = 'PINK REALM 🌸 (PHE NỮ)';
                 document.getElementById('slide-badge').className = 'px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gzPinkLight text-gzPinkDark border-2 border-gzDark';
                 document.getElementById('slide-author').className = 'font-handwrite text-2xl text-gzPink font-bold';
             } else {
-                frame.style.border = '4px solid #1E293B';
                 frame.style.boxShadow = '8px 8px 0px #FF9F1C';
                 frame.style.background = 'linear-gradient(135deg, #FFFFFF 70%, #FFF8DB 100%)';
-
                 realmIndicator.className = 'px-3 py-1 rounded-full text-xs text-gzDark bg-gzYellow border-2 border-gzDark';
                 realmIndicator.innerText = 'TẬP THỂ 12A7 🎓';
-
                 document.getElementById('slide-badge').className = 'px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gzYellowLight text-gzDark border-2 border-gzDark';
                 document.getElementById('slide-author').className = 'font-handwrite text-2xl text-gzOrange font-bold';
             }
 
-            // Apply Slide Transition Animation
             frame.classList.remove('slide-fx-zoom', 'slide-fx-bounce', 'slide-fx-flip');
-            void frame.offsetWidth; // Reflow
+            void frame.offsetWidth;
             frame.classList.add(`slide-fx-${fx}`);
 
-            document.getElementById('slide-img').src = p.image;
+            document.getElementById('slide-media').innerHTML = mediaTag(p, 'max-w-full max-h-full object-contain');
             document.getElementById('slide-title').innerText = p.title;
-            document.getElementById('slide-desc').innerText = p.desc;
+            document.getElementById('slide-desc').innerText = p.desc || '';
             document.getElementById('slide-author').innerText = p.author;
-            document.getElementById('slide-date').innerText = p.date;
-            document.getElementById('slide-sticker').innerText = p.sticker;
-
+            document.getElementById('slide-date').innerText = p.date || '';
+            document.getElementById('slide-sticker').innerText = '✨ Kỷ Niệm 12A7';
             document.getElementById('slide-badge').innerText = p.category;
             document.getElementById('slide-current-idx').innerText = currentSlideIdx + 1;
             document.getElementById('slide-total-idx').innerText = filtered.length;
-
-            const progress = ((currentSlideIdx + 1) / filtered.length) * 100;
-            document.getElementById('presentation-progress').style.width = `${progress}%`;
+            document.getElementById('presentation-progress').style.width = `${((currentSlideIdx + 1) / filtered.length) * 100}%`;
         }
-
-        function nextSlide() {
-            currentSlideIdx++;
-            showSlide();
-        }
-
-        function prevSlide() {
-            currentSlideIdx--;
-            showSlide();
-        }
-
+        function nextSlide() { currentSlideIdx++; showSlide(); }
+        function prevSlide() { currentSlideIdx--; showSlide(); }
         function toggleAutoPlay() {
             isAutoPlaying = !isAutoPlaying;
-            const btn = document.getElementById('autoplay-btn');
-            const icon = document.getElementById('autoplay-icon');
-            const text = document.getElementById('autoplay-text');
-
+            const btn = document.getElementById('autoplay-btn'), icon = document.getElementById('autoplay-icon'), text = document.getElementById('autoplay-text');
             if (isAutoPlaying) {
-                icon.className = 'fa-solid fa-pause';
-                text.innerText = 'Dừng Chiếu';
+                icon.textContent = '⏸'; text.innerText = 'Dừng Chiếu';
                 btn.className = 'px-3.5 py-1.5 rounded-2xl bg-gzPink text-white font-black text-xs border-2 border-gzDark shadow-sm flex items-center gap-2 hover:scale-105 transition';
                 autoPlayTimer = setInterval(nextSlide, 3500);
             } else {
-                icon.className = 'fa-solid fa-play';
-                text.innerText = 'Tự Động Chiếu';
+                icon.textContent = '▶'; text.innerText = 'Tự Động Chiếu';
                 btn.className = 'px-3.5 py-1.5 rounded-2xl bg-gzPurple text-white font-black text-xs border-2 border-gzDark shadow-sm flex items-center gap-2 hover:scale-105 transition';
                 clearInterval(autoPlayTimer);
             }
         }
 
-        // --- WISHES WALL ---
+        // --- WISHES ---
         function renderWishes() {
             const wall = document.getElementById('wishes-wall');
             wall.innerHTML = '';
-
             wishes.forEach(w => {
                 let colorClass = 'bg-gzPinkLight border-gzDark shadow-neo-pink';
                 if (w.color === 'blue') colorClass = 'bg-gzBlueLight border-gzDark shadow-neo-blue';
                 if (w.color === 'yellow') colorClass = 'bg-gzYellowLight border-gzDark shadow-neo-yellow';
                 if (w.color === 'purple') colorClass = 'bg-gzPurpleLight border-gzDark shadow-neo-purple';
-
                 const note = document.createElement('div');
                 note.className = `${colorClass} p-4 rounded-3xl border-3 relative group hover:scale-105 transition duration-300 flex flex-col justify-between`;
                 note.innerHTML = `
-                    <p class="font-handwrite text-2xl text-gzDark leading-relaxed mb-3 font-bold">"${w.content}"</p>
+                    <p class="font-handwrite text-2xl text-gzDark leading-relaxed mb-3 font-bold">"${esc(w.content)}"</p>
                     <div class="flex items-center justify-between text-xs border-t-2 border-gzDark pt-2">
-                        <span class="font-black text-gzDark">${w.author}</span>
-                        <i class="fa-solid fa-heart text-gzPink text-sm"></i>
-                    </div>
-                `;
+                        <span class="font-black text-gzDark">${esc(w.author)}</span><span class="not-italic">❤️</span>
+                    </div>`;
                 wall.appendChild(note);
             });
         }
-
         function handleWishSubmit(e) {
             e.preventDefault();
-            const author = document.getElementById('wish-author').value;
-            const content = document.getElementById('wish-content').value;
-            const color = document.getElementById('wish-color').value;
-
-            wishes.unshift({ author, content, color });
-            renderWishes();
-            e.target.reset();
-
-            confetti({
-                particleCount: 40,
-                spread: 70,
-                origin: { y: 0.8 }
+            const form = e.target;
+            requireUnlock(async () => {
+                const author = document.getElementById('wish-author').value.trim();
+                const content = document.getElementById('wish-content').value.trim();
+                const color = document.getElementById('wish-color').value;
+                if (!author || !content) return;
+                try {
+                    const r = await apiPost({ action: 'addWish', password: pw, author, content, color, owner: myOwner });
+                    if (!r.ok) return handleApiError(r);
+                    form.reset(); confetti({ particleCount: 40, spread: 70, origin: { y: 0.8 } });
+                    loadData(true);
+                } catch (err) { toast('Không gửi được lời nhắn, thử lại nhé'); }
             });
         }
 
-        // --- UPLOAD MODAL ---
+        // --- UPLOAD ---
         function openUploadModal() {
-            document.getElementById('upload-modal').classList.remove('hidden');
-            document.getElementById('upload-modal').classList.add('flex');
-        }
-
-        function closeUploadModal() {
-            document.getElementById('upload-modal').classList.add('hidden');
-            document.getElementById('upload-modal').classList.remove('flex');
-        }
-
-        function handleUploadSubmit(e) {
-            e.preventDefault();
-            const title = document.getElementById('up-title').value;
-            const category = document.getElementById('up-category').value;
-            const image = document.getElementById('up-image').value;
-            const author = "~ " + document.getElementById('up-author').value;
-            const desc = document.getElementById('up-desc').value;
-
-            photos.unshift({
-                id: photos.length + 1,
-                title,
-                category,
-                image,
-                author,
-                desc,
-                date: new Date().toLocaleDateString('vi-VN'),
-                sticker: "✨ Kỷ Niệm 12A7",
-                placedStickers: []
+            requireUnlock(() => {
+                const a = document.getElementById('up-author'); if (!a.value) { try { a.value = localStorage.getItem('a7name') || ''; } catch (e) {} }
+                const m = document.getElementById('upload-modal'); m.classList.remove('hidden'); m.classList.add('flex');
             });
+        }
+        function closeUploadModal() {
+            const m = document.getElementById('upload-modal'); m.classList.add('hidden'); m.classList.remove('flex');
+        }
+        const OK_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'video/mp4', 'video/webm'];
+        const toB64 = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(f); });
 
-            renderPhotos();
-            closeUploadModal();
-            e.target.reset();
+        async function handleUploadSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const st = document.getElementById('up-status'), btn = document.getElementById('up-btn');
+            const say = (m, bad) => { st.classList.remove('hidden'); st.textContent = m; st.className = 'text-xs font-bold mt-2 ' + (bad ? 'text-gzPinkDark' : 'text-gzBlueDark'); };
+            if (!pw) { closeUploadModal(); requireUnlock(openUploadModal); return; }
+            const files = [...document.getElementById('up-files').files];
+            const title = document.getElementById('up-title').value.trim(), category = document.getElementById('up-category').value;
+            const rawName = document.getElementById('up-author').value.trim(); try { localStorage.setItem('a7name', rawName); } catch (x) {}
+            const author = '~ ' + rawName, desc = document.getElementById('up-desc').value.trim();
+            btn.disabled = true; let ok = 0; const bad = [];
+            for (let i = 0; i < files.length; i++) {
+                const f = files[i];
+                if (!OK_TYPES.includes(f.type)) { bad.push(f.name + ': định dạng chưa hỗ trợ'); continue; }
+                if (f.size > 20 * 1024 * 1024) { bad.push(f.name + ': lớn hơn 20 MB'); continue; }
+                say(`Đang tải lên Drive ${i + 1}/${files.length}: ${f.name}...`);
+                try {
+                    const b64 = await toB64(f);
+                    const r = await apiPost({ action: 'addPhoto', password: pw, title, category, author, desc, owner: myOwner,
+                        name: f.name, mime: f.type, b64, date: new Date().toLocaleDateString('vi-VN') });
+                    if (!r.ok) {
+                        if (r.error === 'BAD_PASSWORD') { btn.disabled = false; closeUploadModal(); handleApiError(r); return; }
+                        bad.push(f.name + ': ' + (r.error || 'lỗi tải lên'));
+                    } else ok++;
+                } catch (err) { bad.push(f.name + ': ' + (err && err.message ? err.message : 'lỗi tải lên')); }
+            }
+            btn.disabled = false;
+            if (ok) loadData(true);
+            if (!bad.length) { closeUploadModal(); form.reset(); st.classList.add('hidden'); toast(`Đã đăng ${ok} file 🎉`); confetti({ particleCount: 60, spread: 70, origin: { y: 0.7 } }); }
+            else say((ok ? `Đã đăng ${ok} file. ` : '') + 'Lỗi: ' + bad.join(' | '), true);
         }
 
-        // --- MUSIC PLAYER ---
+        // --- MUSIC ---
         let isPlaying = false;
         const audio = document.getElementById('bg-audio');
         const vinyl = document.getElementById('vinyl-disk');
         const playIcon = document.getElementById('play-icon');
-
+        document.getElementById('music-file').addEventListener('change', e => {
+            const f = e.target.files[0]; if (!f) return;
+            audio.src = URL.createObjectURL(f); toggleMusic();
+        });
         function toggleMusic() {
-            if (isPlaying) {
-                audio.pause();
-                vinyl.classList.remove('spin-slow');
-                playIcon.className = 'fa-solid fa-play';
-                isPlaying = false;
-            } else {
-                audio.play().catch(() => {});
-                vinyl.classList.add('spin-slow');
-                playIcon.className = 'fa-solid fa-pause';
-                isPlaying = true;
-            }
+            if (!audio.getAttribute('src') && !isPlaying) { document.getElementById('music-file').click(); return; }
+            if (isPlaying) { audio.pause(); vinyl.classList.remove('spin-slow'); playIcon.textContent = '▶'; isPlaying = false; }
+            else { audio.play().catch(() => {}); vinyl.classList.add('spin-slow'); playIcon.textContent = '⏸'; isPlaying = true; }
         }
 
-        // Initial Initialization
+        // --- INIT (ai cũng xem được, không cần đăng nhập) ---
+        updateLockUI();
         renderPhotos();
         renderWishes();
+        loadData(true);
+        setInterval(() => { if (!document.hidden) loadData(false); }, 30000);
     </script>
 </body>
 </html>
